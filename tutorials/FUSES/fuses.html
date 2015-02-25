@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Attiny44A Fuses</title>
+<title>ATtiny44A Fuses</title>
 <link href="tutorial_styles.css" rel="stylesheet" type="text/css">
 <style>
     body {
@@ -35,7 +35,7 @@
 <body>
 <div id="container">
 <p><a href="index.html">Back to tutorial index</a></p>
-<h1>Attiny44A Fuses</h1>
+<h1>ATtiny44A Fuses</h1>
     <img src="fuses_files/full_board.jpg" alt="Fab ISP" />
     <h2>What are the fuses?</h2>
     <p>There are 3 bytes of permanent storage in the chip called 'fuse low byte', 'fuse high byte' and 'fuse extended byte'. These bytes are called fuses and can be reprogrammed as many times as you want and determines the behaviour of the chip. To do that, their value is not erased when the chip is powered off or reprogrammed.</p>
@@ -150,14 +150,14 @@
         <tr>
             <td>Clock Output Enable [PB2]</td>
             <td>
-                <input type="checkbox" name="chk_CKOUT_H" value="0" id="chk_CKOUT_H">
+                <input type="checkbox" name="chk_CKOUT_H" value="0" id="chk_CKOUT_H" onchange="highLevelChanged()">
                 <label for="chk_CKOUT_H">CKOUT</label>
             </td>
         </tr>
         <tr>
             <td>Divide clock by 8</td>
             <td>
-                <input type="checkbox" name="chk_CKDIV8_H" value="0" id="chk_CKDIV8_H">
+                <input type="checkbox" name="chk_CKDIV8_H" value="0" id="chk_CKDIV8_H" onchange="highLevelChanged()">
                 <label for="chk_CKDIV8_H">CKDIV8</label>
             </td>
         </tr>
@@ -441,7 +441,8 @@
     </p>
 </div>
 <div id="footer">
-       <a xmlns:cc="http://creativecommons.org/ns#" href="https://es.linkedin.com/pub/alejandro-escario/2a/841/819" property="cc:attributionName" rel="cc:attributionURL">Alejandro Escario Méndez</a><br />
+        <a href="http://fabacademy.org/archives/2015/eu/students/escario_mendez.alejandro/index.html">Alejandro Escario Méndez</a> - 
+       <a href="https://es.linkedin.com/pub/alejandro-escario/2a/841/819">about me</a><br />
           Licensed under a <a rel="license" href="http://opensource.org/licenses/MIT">MIT License</a> 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -456,6 +457,12 @@
         while(extended.length < 2){
             extended = '0' + extended;
         }
+        console.log(low)
+        low = low.toUpperCase();
+        console.log(low)
+        high = high.toUpperCase();
+        extended = extended.toUpperCase();
+        
         $('#txtLow').val(low);
         $('#txtHigh').val(high);
         $('#txtExtended').val(extended);
