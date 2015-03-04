@@ -448,13 +448,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
     function setHexa(low, high, extended){
-        while(low.length < 2){
+        while(low.length < 2 && !$("#txtLow").is(":focus")){
             low = '0' + low;
         }
-        while(high.length < 2){
+        while(high.length < 2 && !$("#txtHigh").is(":focus")){
             high = '0' + high;
         }
-        while(extended.length < 2){
+        while(extended.length < 2 && !$("#txtExtended").is(":focus")){
             extended = '0' + extended;
         }
         console.log(low)
