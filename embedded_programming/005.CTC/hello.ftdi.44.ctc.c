@@ -1,10 +1,6 @@
 //
 //
-// hello.ftdi.44.echo.c
-//
-// 115200 baud FTDI character echo, with flash string
-//
-// set lfuse to 0x7E for 20 MHz xtal
+// hello.ftdi.44.ctc.c
 //
 // Neil Gershenfeld
 // 12/8/10

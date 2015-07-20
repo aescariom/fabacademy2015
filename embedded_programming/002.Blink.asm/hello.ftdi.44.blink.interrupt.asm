@@ -1,5 +1,5 @@
 ;
-; hello.ftdi.interrupt.44.asm
+; hello.ftdi.44.blink.interrupt.asm
 ;
 ; Led + button (interrupt)
 ; Modified by Alejandro Escario - FabAcademy 2015
